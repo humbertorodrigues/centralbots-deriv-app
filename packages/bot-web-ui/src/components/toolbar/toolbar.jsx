@@ -30,67 +30,67 @@ const ToolbarButton = ({ popover_message, button_id, button_classname, buttonOnC
 );
 
 const WorkspaceGroup = ({
-    has_redo_stack,
-    has_undo_stack,
-    onResetClick,
-    onSortClick,
-    onUndoClick,
-    onZoomInOutClick,
+    // has_redo_stack,
+    // has_undo_stack,
+    // onResetClick,
+    // onSortClick,
+    // onUndoClick,
+    // onZoomInOutClick,
     toggleLoadModal,
-    toggleSaveModal,
+    // toggleSaveModal,
 }) => (
     <div className='toolbar__group toolbar__group-btn'>
-        <IconButton
+        {/* <IconButton
             popover_message={localize('Reset')}
             icon='IcReset'
             icon_id='db-toolbar__reset-button'
             iconOnClick={onResetClick}
-        />
+        /> */}
         <IconButton
             popover_message={localize('Import')}
             icon='IcFolderOpen'
             icon_id='db-toolbar__import-button'
             iconOnClick={toggleLoadModal}
         />
-        <IconButton
+        {/* <IconButton
             popover_message={localize('Save')}
             icon='IcSave'
             icon_id='db-toolbar__save-button'
             iconOnClick={toggleSaveModal}
-        />
-        <div className='vertical-divider' />
-        <IconButton
+        /> */}
+        {/* <div className='vertical-divider' /> */}
+        {/* <IconButton
             popover_message={localize('Undo')}
             icon='IcUndo'
             icon_id='db-toolbar__undo-button'
             icon_color={has_undo_stack ? undefined : 'disabled'}
-            iconOnClick={() => onUndoClick(/* redo */ false)}
-        />
-        <IconButton
+            iconOnClick={() => onUndoClick(false)}
+        /> */}
+        {/* <IconButton
             popover_message={localize('Redo')}
             icon='IcRedo'
             icon_id='db-toolbar__redo-button'
             icon_color={has_redo_stack ? undefined : 'disabled'}
-            iconOnClick={() => onUndoClick(/* redo */ true)}
-        />
-        <IconButton
+            iconOnClick={() => onUndoClick( true)}
+        /> */}
+        {/* <IconButton
             popover_message={localize('Sort')}
             icon='IcSort'
             icon_id='db-toolbar__sort-button'
             iconOnClick={onSortClick}
-        />
-        <IconButton
+        /> */}
+        {/* <IconButton
             popover_message={localize('Zoom in')}
             icon='IcZoomIn'
             icon_id='db-toolbar__zoom-in-button'
-            iconOnClick={() => onZoomInOutClick(/* in */ true)}
-        />
-        <IconButton
+            iconOnClick={() => onZoomInOutClick( true)}
+        /> */}
+        {/* <IconButton
             popover_message={localize('Zoom out')}
             icon='IcZoomOut'
             icon_id='db-toolbar__zoom-out'
-            iconOnClick={() => onZoomInOutClick(/* in */ false)}
-        />
+            iconOnClick={() => onZoomInOutClick( false)}
+        /> */}
     </div>
 );
 
@@ -102,9 +102,9 @@ const Toolbar = ({ onMount, onUnmount, ...other_props }) => {
         is_dialog_open,
         onOkButtonClick,
         closeResetDialog,
-        toggleStrategyModal,
+        // toggleStrategyModal,
         toggleLoadModal,
-        toggleSaveModal,
+        // toggleSaveModal,
     } = other_props;
 
     return (
@@ -119,34 +119,34 @@ const Toolbar = ({ onMount, onUnmount, ...other_props }) => {
                             icon={<Icon icon='IcFolderOpenFilled' color='active' size={16} />}
                             button_text={localize('Load')}
                         />
-                        <ToolbarButton
+                        {/* <ToolbarButton
                             button_id='db-toolbar__quick-strategy-button--mobile'
                             button_classname='toolbar__btn--icon'
                             buttonOnClick={toggleStrategyModal}
                             icon={<Icon icon='IcPuzzle' color='active' size={16} />}
                             button_text={localize('Quick')}
-                        />
-                        <ToolbarButton
+                        /> */}
+                        {/* <ToolbarButton
                             button_id='db-toolbar__save-button--mobile'
                             button_classname='toolbar__btn--icon'
                             buttonOnClick={toggleSaveModal}
                             icon={<Icon icon='IcSaveFilled' color='active' size={16} />}
                             button_text={localize('Save')}
-                        />
+                        /> */}
                     </div>
                 </div>
             ) : (
                 <ThemedScrollbars height='56px' is_only_horizontal width='100%'>
                     <div className='toolbar'>
                         <div className='toolbar__section'>
-                            <ToolbarButton
+                            {/* <ToolbarButton
                                 popover_message={localize('Click here to start building your DBot.')}
                                 button_id='db-toolbar__get-started-button'
                                 button_classname='toolbar__btn toolbar__btn--icon toolbar__btn--start'
                                 buttonOnClick={toggleStrategyModal}
                                 icon={<Icon icon='IcPuzzle' color='active' />}
                                 button_text={localize('Quick strategy')}
-                            />
+                            /> */}
                             {active_tab === tabs_title.WORKSPACE && <WorkspaceGroup {...other_props} />}
                         </div>
                         <div className='toolbar__section'>
