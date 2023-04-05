@@ -4,9 +4,10 @@ import { Modal, Tabs, MobileFullPageModal } from '@deriv/components';
 import { localize } from '@deriv/translations';
 import { connect } from 'Stores/connect';
 import { tabs_title } from 'Constants/load-modal';
-import GoogleDrive from './google-drive.jsx';
+// import GoogleDrive from './google-drive.jsx';
 import Local from './local.jsx';
 import Recent from './recent.jsx';
+import Robos from './robos.jsx';
 
 const LoadModal = ({
     active_index,
@@ -33,10 +34,13 @@ const LoadModal = ({
             >
                 <Tabs active_index={active_index} onTabItemClick={setActiveTabIndex} top>
                     <div label={localize('Local')}>
-                        <Local />
+                        <Robos />
                     </div>
                     <div label='Google Drive'>
-                        <GoogleDrive />
+                        <Robos />
+                    </div>
+                    <div label='Robôs'>
+                        <Robos />
                     </div>
                 </Tabs>
             </MobileFullPageModal>
@@ -57,13 +61,16 @@ const LoadModal = ({
             <Modal.Body>
                 <Tabs active_index={active_index} onTabItemClick={setActiveTabIndex} top header_fit_content>
                     <div label={localize('Recent')}>
-                        <Recent />
+                        <Robos />
                     </div>
                     <div label={localize('Local')}>
-                        <Local />
+                        <Robos />
                     </div>
                     <div label='Google Drive'>
-                        <GoogleDrive />
+                        <Robos />
+                    </div>
+                    <div label='Robôs'>
+                        <Robos />
                     </div>
                 </Tabs>
             </Modal.Body>
@@ -101,5 +108,4 @@ export default connect(({ load_modal, ui }) => ({
     recent_strategies: load_modal.recent_strategies,
     setActiveTabIndex: load_modal.setActiveTabIndex,
     tab_name: load_modal.tab_name,
-    toggleLoadModal: load_modal.toggleLoadModal,
 }))(LoadModal);

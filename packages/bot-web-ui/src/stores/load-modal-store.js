@@ -335,4 +335,27 @@ export default class LoadModalStore {
         });
         reader.readAsText(file);
     };
+    readRemoteFile = (is_preview, drop_event, xml) => {
+        const load_options = { block_string: xml, drop_event, from: save_types.LOCAL };
+
+        // if (is_preview) {
+        //     const ref = document.getElementById('load-strategy__blockly-container');
+
+        //     this.local_workspace = Blockly.inject(ref, {
+        //         media: `${__webpack_public_path__}media/`, // eslint-disable-line
+        //         zoom: {
+        //             wheel: false,
+        //             startScale: config.workspaces.previewWorkspaceStartScale,
+        //         },
+        //         readOnly: true,
+        //         scrollbars: true,
+        //     });
+        //     load_options.workspace = this.local_workspace;
+        // } else {
+        load_options.workspace = Blockly.derivWorkspace;
+        load_options.file_name = 'meuRoboTeste';
+        // }
+
+        load(load_options);
+    };
 }
