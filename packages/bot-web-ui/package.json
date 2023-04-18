@@ -71,6 +71,7 @@
         "@deriv/translations": "^1.0.0",
         "classnames": "^2.2.6",
         "crc-32": "^1.2.0",
+        "dom-parser": "^0.1.6",
         "formik": "^2.1.4",
         "gh-pages": "^2.1.1",
         "immutable": "^3.8.2",
@@ -82,6 +83,7 @@
         "react": "^17.0.2",
         "react-content-loader": "^6.2.0",
         "react-dom": "^17.0.2",
-        "react-transition-group": "4.4.2"
+        "react-transition-group": "4.4.2",
+        "react-xml-parser": "^1.1.8"
     }
 }
